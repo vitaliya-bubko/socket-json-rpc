@@ -167,10 +167,10 @@ export class SocketJsonRpc {
             result = JSON.parse(msgEvent.data);
         }
         catch (e) { }
-        if (!result.jsonrpc || result.jsonrpc !== JsonRpcVersion) {
-            Logger.warn('ignore non-standard data', msgEvent);
-            return;
-        }
+        // if (!result.jsonrpc || result.jsonrpc !== JsonRpcVersion) {
+        //     Logger.warn('ignore non-standard data', msgEvent);
+        //     return;
+        // }
         let cb = null;
         if (result.id) {
             cb = this.requestCallbacks[result.id];
